@@ -1,7 +1,6 @@
 with Seat_Control; use Seat_Control;
 with Mode_Control; use Mode_Control;
 
--- driving_control.ads
 package Driving_Control with SPARK_Mode => On is
    subtype Speed_Type is Float range 0.0 .. 300.0;
 

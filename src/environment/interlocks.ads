@@ -1,7 +1,7 @@
 with Heating_Control; use Heating_Control;
 with Window_Control;  use Window_Control;
 
--- avoid circular dependencies
+-- this package helps avoid circular dependencies
 package Interlocks WITH SPARK_Mode => On is
    procedure Enforce_Window_Heating_Interlock
      with
