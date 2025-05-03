@@ -10,13 +10,6 @@ package body Battery_Monitor with SPARK_Mode => On is
       Current_Leisure_Charge := Leisure_Batt;
    end Update_Battery_Levels;
 
-   function Leisure_Charge return Charge_Percent is
-   begin
-      return Current_Leisure_Charge;
-   end Leisure_Charge;
-
-   function Driving_Charge return Charge_Percent is
-   begin
-      return Current_Driving_Charge;
-   end Driving_Charge;
+   function Driving_Charge return Charge_Percent is (Current_Driving_Charge);
+   function Leisure_Charge return Charge_Percent is (Current_Leisure_Charge);
 end Battery_Monitor;

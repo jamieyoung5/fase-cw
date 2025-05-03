@@ -5,8 +5,10 @@ package Battery_Monitor with SPARK_Mode => On is
    procedure Update_Battery_Levels (
                                     Driving_Batt : in Charge_Percent;
                                     Leisure_Batt : in Charge_Percent)
-     with Pre => (Driving_Batt in Charge_Percent'Range and then
-                    Leisure_Batt in Charge_Percent'Range);
+     with Pre  => (Driving_Batt in Charge_Percent'Range and then
+                   Leisure_Batt in Charge_Percent'Range),
+          Post => (Driving_Charge = Driving_Batt and then
+                   Leisure_Charge = Leisure_Batt);
 
    function Leisure_Charge return Charge_Percent;
    function Driving_Charge return Charge_Percent;

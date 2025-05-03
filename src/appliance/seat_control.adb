@@ -14,4 +14,6 @@ package body Seat_Control with SPARK_Mode => On is
       end loop;
       return Ready;
    end All_Seats_Ready;
+
+   function Get_Current_Positions return Seat_Positions_Array is (Current_Positions);
 end Seat_Control;

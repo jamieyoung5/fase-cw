@@ -1,5 +1,4 @@
 package body Window_Control with SPARK_Mode => On is
-
    function Any_Window_Open return Boolean is
       Result : Boolean := False;
    begin
@@ -19,4 +18,5 @@ package body Window_Control with SPARK_Mode => On is
       Window_State(Id) := False;
    end Close_Window;
 
+   function Window_Is_Open (Id : Window_Id) return Boolean is (Window_State(Id));
 end Window_Control;

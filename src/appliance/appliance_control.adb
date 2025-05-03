@@ -17,4 +17,7 @@ package body Appliance_Control with SPARK_Mode => On is
       when Oven   => Oven_On   := False;
       end case;
    end Turn_Off;
+
+   function Is_On (A : in Appliance_Id) return Boolean is
+     (if A = Fridge then Fridge_On else Oven_On);
 end Appliance_Control;

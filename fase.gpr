@@ -1,7 +1,9 @@
 project Fase is
+
    for Languages use ("Ada");
-   for Source_Dirs use ("src/appliance/", "src/environment/", "src/monitor/", "src/control/", "src");
+   for Source_Dirs use ("src/system/", "src/appliance/", "src/environment/", "src/monitor/", "src/control/", "src");
    for Object_Dir use "obj";
    for Exec_Dir use "bin";
+
 end Fase;
 

@@ -6,8 +6,5 @@ package body Mode_Control with SPARK_Mode => On is
       Mode_State := M;
    end Set_Mode;
 
-   function Current_Mode return Mode_Type is
-   begin
-      return Mode_State;
-   end Current_Mode;
+   function Current_Mode return Mode_Type is (Mode_State);
 end Mode_Control;
