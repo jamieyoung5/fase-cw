@@ -1,11 +1,15 @@
 with Seat_Control; use Seat_Control;
 with Mode_Control; use Mode_Control;
 
+-- driving_control.ads
 package Driving_Control with SPARK_Mode => On is
    subtype Speed_Type is Float range 0.0 .. 300.0;
 
    procedure Set_Road_Speed_Limit (Limit : in Speed_Type)
-     with Post => (Get_Road_Speed_Limit = Limit);
+     with
+       Post =>
+         Get_Road_Speed_Limit = Limit
+       and then Get_Vehicle_Speed <= Limit;
 
    procedure Start_Driving
      with
@@ -30,3 +34,4 @@ private
    function Get_Vehicle_Speed return Speed_Type is
      (Vehicle_Speed);
 end Driving_Control;
+

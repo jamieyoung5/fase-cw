@@ -1,4 +1,7 @@
+with Interlocks; use Interlocks;
+
 package body Window_Control with SPARK_Mode => On is
+
    function Any_Window_Open return Boolean is
       Result : Boolean := False;
    begin
@@ -11,6 +14,7 @@ package body Window_Control with SPARK_Mode => On is
    procedure Open_Window (Id : Window_Id) is
    begin
       Window_State(Id) := True;
+      Enforce_Window_Heating_Interlock;
    end Open_Window;
 
    procedure Close_Window (Id : Window_Id) is
@@ -18,5 +22,4 @@ package body Window_Control with SPARK_Mode => On is
       Window_State(Id) := False;
    end Close_Window;
 
-   function Window_Is_Open (Id : Window_Id) return Boolean is (Window_State(Id));
 end Window_Control;

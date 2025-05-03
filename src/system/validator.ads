@@ -6,9 +6,10 @@ with Heating_Control;     use Heating_Control;
 with Window_Control;      use Window_Control;
 
 package Validator with SPARK_Mode => On is
-    procedure Validate
+   procedure Validate
      with
-       Post => (Current_Mode = Drive_Mode and then All_Seats_Ready) or else
+       Post => (Current_Mode = Drive_Mode and then All_Seats_Ready)
+            or else
                (Current_Mode = Camp_Mode and then
                 Get_Temperature in Min_Camp_Temp .. Max_Camp_Temp and then
                 Leisure_Charge >= Min_Leisure_Charge_For_Appliances and then

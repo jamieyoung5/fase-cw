@@ -1,6 +1,11 @@
 package body Driving_Control with SPARK_Mode => On is
+
    procedure Set_Road_Speed_Limit (Limit : in Speed_Type) is
    begin
+      if Vehicle_Speed > Limit then
+         Vehicle_Speed := Limit;
+      end if;
+
       Road_Speed_Limit_Var := Limit;
    end Set_Road_Speed_Limit;
 
@@ -13,4 +18,5 @@ package body Driving_Control with SPARK_Mode => On is
    begin
       Vehicle_Speed := V;
    end Set_Speed;
+
 end Driving_Control;
